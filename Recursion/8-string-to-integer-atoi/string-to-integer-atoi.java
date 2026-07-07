@@ -4,7 +4,7 @@ class Solution {
         if (s.isEmpty())
             return 0;
         int i = 0, si = 1;
-        long res = 0;
+        long res = 0;   // make this long 
         if (s.charAt(i) == '-' || s.charAt(i) == '+') {
             si = s.charAt(i) == '-' ? -1 : 1;
             i++;
@@ -18,7 +18,7 @@ class Solution {
                 return Integer.MIN_VALUE;
             i++;
         }
-        return (int)(si * res);
+        return (int)(si * res);// return int 
 
     }
 }
