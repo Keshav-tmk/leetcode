@@ -1,8 +1,15 @@
 class Solution {
     public int gcd(int a, int b) {
-        if (b == 0)
-            return a;
-        return gcd(b, a % b);
+        // if (b == 0)
+        //     return a;
+        // return gcd(b, a % b);
+        while(b!=0){
+            int t=b;
+            b=a%b;
+            a=t;
+
+        }
+        return a;
     }
 
     // public int findmax(int arr[], int n) {
@@ -19,7 +26,8 @@ class Solution {
         int[] pre = new int[n];
         int max = Integer.MIN_VALUE;
         for (int i = 0; i < n; i++) {
-            max = Math.max(max,nums[i]);
+            // max = Math.max(max,nums[i]);
+            if(nums[i]>max)max=nums[i];
             pre[i] = gcd(nums[i], max);
 
         }
