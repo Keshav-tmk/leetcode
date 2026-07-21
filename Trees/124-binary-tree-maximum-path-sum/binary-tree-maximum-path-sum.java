@@ -18,12 +18,12 @@ class Solution {
     public int findh(TreeNode root){
         if(root==null)return 0;
 
-        int l=Math.max(0,findh(root.left));
-        int r=Math.max(0,findh(root.right));
+        int l=Math.max(0,findh(root.left));//to ignore negatives 
+        int r=Math.max(0,findh(root.right));//to ignore negatives 
 
         max=Math.max(max,root.val+l+r);
 
-        return root.val+Math.max(0,Math.max(l,r));//to ignore 
+        return root.val+Math.max(0,Math.max(l,r));//to ignore negatives 
     }
     public int maxPathSum(TreeNode root) {
         findh(root);
